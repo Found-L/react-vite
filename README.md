@@ -1,54 +1,81 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 插件和模块
 
-Currently, two official plugins are available:
+- **axios**: 用于发送 HTTP 请求。
+- **react**: 用于构建用户界面。
+- **react-dom**: 用于在 DOM 中渲染 React 组件。
+- **react-dropzone**: 用于实现文件拖放上传功能。
+- **@vitejs/plugin-react**: Vite 的 React 插件，用于支持 React 项目。
+- **autoprefixer**: 用于自动添加 CSS 前缀。
+- **eslint**: 用于代码质量检查。
+- **eslint-plugin-react-hooks**: 用于检查 React Hooks 的使用。
+- **eslint-plugin-react-refresh**: 用于 React 刷新插件的 ESLint 支持。
+- **postcss**: 用于处理 CSS。
+- **tailwindcss**: 用于快速构建 CSS 样式。
+- **typescript**: 用于静态类型检查。
+- **typescript-eslint**: 用于 TypeScript 的 ESLint 支持。
+- **vite**: 用于快速构建和开发前端项目。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 实现的功能
 
-## Expanding the ESLint configuration
+文件上传: 使用 react-dropzone 实现文件拖放上传功能。
+文件解析: 使用 axios 将上传的文件发送到服务器进行解析，并显示解析结果。
+用户界面: 使用 tailwindcss 构建简洁的用户界面，包括文件上传区域、上传按钮和解析结果显示区域。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 主要组件
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+App.tsx: 主应用组件，包含 FileUploader 组件。
+FileUploader.tsx: 文件上传组件，包含文件拖放、上传按钮和解析结果显示功能。
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 如何运行项目
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. 克隆项目代码到本地：
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+  ```bash
+  git clone <项目仓库地址>
+  ```
+
+2. 安装依赖：
+
+  ```bash
+  cd <项目目录>
+  npm install
+  ```
+
+3. 配置环境变量：
+
+- 在项目根目录下创建一个 `.env` 文件，并根据需要配置数据库连接信息和其他环境变量。
+
+4. 启动应用：
+
+  ```bash
+  npm start
+  ```
+
+## 贡献指南
+
+欢迎对本项目进行贡献！请阅读以下指南以了解如何参与：
+
+1. Fork 本项目仓库。
+2. 创建一个新的分支：
+
+  ```bash
+  git checkout -b feature/your-feature-name
+  ```
+
+3. 提交您的更改：
+
+  ```bash
+  git commit -m "Add some feature"
+  ```
+
+4. 推送到远程分支：
+
+  ```bash
+  git push origin feature/your-feature-name
+  ```
+
+5. 创建一个 Pull Request。
+
+感谢您的贡献！
