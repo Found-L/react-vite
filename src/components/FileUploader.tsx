@@ -31,6 +31,7 @@ const FileUploader: React.FC = () => {
             console.log('response',response.data.data);
             setResult(response.data.data.content);
         } catch (error) {
+            console.error(error);
             setResult("Error parsing file");
         } finally {
             setLoading(false);
@@ -48,7 +49,10 @@ const FileUploader: React.FC = () => {
                 {file ? (
                     <p>Selected: {file.name}</p>
                 ) : (
-                    <p>Drag & drop a file here, or click to select one</p>
+                    <div>
+                        <p className="p-2">Drag & drop a file here, or click to select one</p>
+                        <p className="p-2">Only .docx .doc .pdf .pptx .ppt .txt .xlsx .xls .md .html .xml .json files are accepted</p>
+                    </div>
                 )}
             </div>
 
